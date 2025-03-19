@@ -1,0 +1,13 @@
+const { isDeepEqual } = require("../src/isDeepEqual.js");
+const a = { prop1: 1, list: [1, 2, 3], o: { x: 2 } };
+const b = { list: [1, 2, 3], o: { x: 2 } };
+console.assert(isDeepEqual(a, b) === false, "Test Failed: Objects should not be equal");
+b.prop1 = 1;
+console.assert(isDeepEqual(a, b) === true, "Test Failed: Objects should be equal");
+console.assert(isDeepEqual([1, 2, 3], [1, 2, 3]) === true, "Test Failed: Arrays should be equal");
+console.assert(isDeepEqual([1, 2, 3], [1, 2, 4]) === false, "Test Failed: Arrays should not be equal");
+console.assert(isDeepEqual(null, null) === true, "Test Failed: Null values should be equal");
+console.assert(isDeepEqual(null, {}) === false, "Test Failed: Null and object should not be equal");
+console.assert(isDeepEqual({}, {}) === true, "Test Failed: Empty objects should be equal");
+console.assert(isDeepEqual({ a: { b: 2 } }, { a: { b: 2 } }) === true, "Test Failed: Nested objects should be equal");
+console.assert(isDeepEqual({ a: { b: 2 } }, { a: { b: 3 } }) === false, "Test Failed: Nested objects should not be equal");
