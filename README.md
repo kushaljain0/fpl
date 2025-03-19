@@ -9,6 +9,7 @@ This repository contains solutions for the given tasks:
 3. **drawCalendar.js** - Generates a simple calendar for a given month and year.
 4. **isDeepEqual.js** - Deep equality checker for objects and arrays.
 5. **spiral.js** - Converts a 2D array into a 1D array following a spiral order.
+6. **quadraticEquation.js** - Finds roots of a quadratic equation.
 
 ### Running Tests
 
@@ -37,4 +38,9 @@ To run tests for each module, follow these steps:
 5. **spiral.js**
     ```sh
     node tests/spiral.test.js
+    ```
+
+6. **quadraticEquation.js**
+    ```sh
+    node tests/quadraticEquation.test.js
     ```
